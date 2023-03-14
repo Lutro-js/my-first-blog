@@ -20,3 +20,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
 ]
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),  # 既存のパターン
+    path('study/', views.study, name='study'),  # 新しいパターン
+]
